@@ -1,0 +1,77 @@
+{
+  "name": "tabby-tftp",
+  "version": "0.2.1",
+  "description": "TFTP client and read-only firmware server for Tabby terminal",
+  "keywords": [
+    "tabby-plugin",
+    "tabby",
+    "tftp",
+    "tftp-server",
+    "firmware",
+    "serial",
+    "bootloader",
+    "u-boot",
+    "embedded",
+    "file-transfer"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijzijie/tabby-tftp.git"
+  },
+  "homepage": "https://github.com/lijzijie/tabby-tftp#readme",
+  "bugs": {
+    "url": "https://github.com/lijzijie/tabby-tftp/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "docs/PUBLISHING.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "watch": "node scripts/build.js --watch",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node --test tests/protocol.test.js tests/client.test.js tests/server.test.js",
+    "verify": "npm run typecheck && npm test && npm run build",
+    "pack:plugin": "npm pack",
+    "prepublishOnly": "npm run verify"
+  },
+  "author": "linzi",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=15 <17",
+    "@angular/core": ">=15 <17",
+    "@angular/forms": ">=15 <17",
+    "@ng-bootstrap/ng-bootstrap": ">=14 <16",
+    "rxjs": ">=7 <8",
+    "tabby-core": ">=1.0.200"
+  },
+  "devDependencies": {
+    "@angular/animations": "^15.2.10",
+    "@angular/common": "^15.2.10",
+    "@angular/core": "^15.2.10",
+    "@angular/forms": "^15.2.10",
+    "@ng-bootstrap/ng-bootstrap": "^14.2.0",
+    "@types/node": "^20.10.0",
+    "rxjs": "^7.8.1",
+    "tabby-core": "1.0.231-nightly.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": ".test-dist",
+    "sourceMap": false,
+    "outDir": ".test-dist"
+  },
+  "include": ["src/tftp/**/*.ts"],
+  "exclude": []
+}
